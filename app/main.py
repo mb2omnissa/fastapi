@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from . import models
 from .database import engine
 from .routers import user, post, auth, vote
-from .config import settings
+
 
 
 
