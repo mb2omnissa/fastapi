@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, conint
+from pydantic import BaseModel, EmailStr, conint, ConfigDict
 from datetime import datetime
 from typing import Optional
 
@@ -15,33 +15,31 @@ class UserOut(BaseModel):
     id: int
     email: EmailStr
     created_at: datetime
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class Post(PostBase):
     id: int
     created_at: datetime
     owner_id : int
     owner: UserOut
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+
+class PostUpdate(PostBase):
+    id: int
+    created_at: datetime
+    owner_id : int
+    owner_email: EmailStr
+    model_config = ConfigDict(from_attributes=True)
 
 class PostOut(BaseModel):
-    id: int
-    title: str
-    content: str
-    created_at: datetime
-    owner_id: int
-    owner: UserOut
+    Post: Post
     votes: int
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class PostVote(BaseModel):
     Post: Post
     votes: int
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class UserCreate(BaseModel):
     email: EmailStr
