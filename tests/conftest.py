@@ -3,7 +3,8 @@ import os
 
 # Add the parent directory to sys.path so that SAJAPI can be found
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from fastapi.testclient import TestClient
+# from fastapi.testclient import TestClient
+from starlette.testclient import TestClient
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
