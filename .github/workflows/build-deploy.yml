@@ -10,3 +10,9 @@ jobs:
         uses: actions/checkout@v2
       - name: say hi to mahesh
         run: echo "hello mahesh"
+        with:
+          python-version: "3.12.6"
+      - name: update pip
+        run: python -m pip install --upgrade pip
+      - name: install all dependencies
+        run: pip install -r requirements.txt
