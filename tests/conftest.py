@@ -19,11 +19,11 @@ from app import models
 # from alembic import command
 
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:password123@postgres:5432/fastapi_test'
+DATABASE_URL = "postgresql://postgres:Wysescale@localhost:5432/fastapi_test"
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}_test'
 
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(DATABASE_URL)
 
 TestingSessionLocal = sessionmaker(
     autocommit=False, autoflush=False, bind=engine)
