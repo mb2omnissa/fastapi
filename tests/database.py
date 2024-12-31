@@ -13,7 +13,7 @@ import pytest
 
 
 
-SQLALCHEMY_DATABASE_URI = f"postgresql://postgres:Wysescale@localhost:5432/fastapi_test"
+SQLALCHEMY_DATABASE_URI = f"postgresql://postgres:Wysescale@postgres:5432/fastapi_test"
 
 
 engine = create_engine(SQLALCHEMY_DATABASE_URI)

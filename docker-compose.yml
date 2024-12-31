@@ -13,7 +13,7 @@ services:
       - DATABASE_HOSTNAME=postgres  # Use the service name of the PostgreSQL container
       - DATABASE_PORT=5432
       - DATABASE_PASSWORD=Wysescale
-      - DATABASE_NAME=fastapi
+      - DATABASE_NAME=fastapi_test
       - DATABASE_USERNAME=postgres
       - SECRET_KEY=c5ac49e468d664c7186a475dff7f33d29ede3f2a88aea4afb4b05d2e150f7095
       - ALGORITHM=HS256
@@ -24,7 +24,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Wysescale
-      - POSTGRES_DB=fastapi
+      - POSTGRES_DB=fastapi_test
     ports:
       - 5432:5432  # Expose PostgreSQL on port 5432
     volumes:
