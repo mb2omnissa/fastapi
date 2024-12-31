@@ -19,6 +19,7 @@ jobs:
     services:
       postgres:
         image: postgres
+        network-alias: postgres
         env:
           DATABASE_USER: postgres
           POSTGRES_PASSWORD: Wysescale
