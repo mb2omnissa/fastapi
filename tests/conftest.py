@@ -20,17 +20,17 @@ from app import models
 
 SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:Wysescale@localhost:5432/fastapi_test'
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}_test'
-def create_test_database():
-    conn = psycopg2.connect("dbname=postgres user=postgres password=Wysescale host=localhost")
-    conn.autocommit = True
-    cursor = conn.cursor()
-    cursor.execute("SELECT 1 FROM pg_database WHERE datname = 'fastapi_test'")
-    if not cursor.fetchone():
-        cursor.execute("CREATE DATABASE fastapi_test")
-    cursor.close()
-    conn.close()
-
-create_test_database()
+# def create_test_database():
+#     conn = psycopg2.connect("dbname=postgres user=postgres password=Wysescale host=localhost")
+#     conn.autocommit = True
+#     cursor = conn.cursor()
+#     cursor.execute("SELECT 1 FROM pg_database WHERE datname = 'fastapi_test'")
+#     if not cursor.fetchone():
+#         cursor.execute("CREATE DATABASE fastapi_test")
+#     cursor.close()
+#     conn.close()
+#
+# create_test_database()
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 # Base.metadata.create_all(bind=engine)
