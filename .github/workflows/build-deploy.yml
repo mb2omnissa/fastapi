@@ -16,7 +16,6 @@ jobs:
     services:
       postgres:
         image: postgres
-        network-alias: postgres
         env:
           POSTGRES_PASSWORD: Wysescale
           POSTGRES_DB: fastapi_test
