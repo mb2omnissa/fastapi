@@ -45,7 +45,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: test with pytest
         env:
-          DATABASE_URL: postgresql://postgres:Wysescale@postgres:5432/fastapi_test
+          DATABASE_URL: postgresql://postgres:Wysescale@localhost:5432/fastapi_test
         run: |
           pip install pytest
           pytest
