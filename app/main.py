@@ -8,7 +8,7 @@ from .routers import user, post, auth, vote
 
 
 
-models.Base.metadata.create_all(bind=engine)
+# models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 origins = ['*']
 app.add_middleware(
@@ -25,7 +25,7 @@ app.include_router(auth.router)
 app.include_router(vote.router)
 @app.get("/")
 def root():
-    return {"message": "Welcome From Docker to FAST API1"}
+    return {"message": "Welcome From Docker to FAST API5d"}
 
 
 

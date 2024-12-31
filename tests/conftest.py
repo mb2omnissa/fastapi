@@ -10,21 +10,30 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from app.main import app
-
+import psycopg2
 from app.config import settings
-from app.database import get_db
-from app.database import Base
+from app.database import get_db, Base
 from app.oauth2 import create_access_token
 from app import models
 # from alembic import command
 
 
-DATABASE_URL = "postgresql://postgres:Wysescale@localhost:5432/fastapi_test"
+SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:Wysescale@localhost:5432/fastapi_test'
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}_test'
+def create_test_database():
+    conn = psycopg2.connect("dbname=postgres user=postgres password=Wysescale host=localhost")
+    conn.autocommit = True
+    cursor = conn.cursor()
+    cursor.execute("SELECT 1 FROM pg_database WHERE datname = 'fastapi_test'")
+    if not cursor.fetchone():
+        cursor.execute("CREATE DATABASE fastapi_test")
+    cursor.close()
+    conn.close()
 
+create_test_database()
 
-engine = create_engine(DATABASE_URL)
-
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+# Base.metadata.create_all(bind=engine)
 TestingSessionLocal = sessionmaker(
     autocommit=False, autoflush=False, bind=engine)
 
