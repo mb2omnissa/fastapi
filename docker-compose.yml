@@ -10,7 +10,7 @@ services:
       - ./:/usr/src/app:ro
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     environment:
-      - DATABASE_HOSTNAME=localhost  # Use the service name of the PostgreSQL container
+      - DATABASE_HOSTNAME=postgres  # Use the service name of the PostgreSQL container
       - DATABASE_PORT=5432
       - DATABASE_PASSWORD=Wysescale
       - DATABASE_NAME=fastapi
