@@ -10,7 +10,7 @@ jobs:
       DATABASE_HOSTNAME: localhost
       DATABASE_PORT: 5432
       DATABASE_PASSWORD: Wysescale
-      DATABASE_NAME: fastapi
+      DATABASE_NAME: fastapi_test
       DATABASE_USERNAME: postgres
       SECRET_KEY: c5ac49e468d664c7186a475dff7f33d29ede3f2a88aea4afb4b05d2e150f7095
       ALGORITHM: HS256
@@ -20,8 +20,8 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-          POSTGRES_DB: ${{secrets.DATABASE_NAME}}_test
+          POSTGRES_PASSWORD: Wysescale
+          POSTGRES_DB: fastapi_test
         ports:
           - 5432:5432
         options: >-
