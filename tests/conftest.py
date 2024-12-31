@@ -18,7 +18,7 @@ from app import models
 # from alembic import command
 
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:Wysescale@postgres:5432/fastapi'
+SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:Wysescale@localhost:5432/fastapi'
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}_test'
 # def create_test_database():
 #     conn = psycopg2.connect("dbname=postgres user=postgres password=Wysescale host=localhost")
