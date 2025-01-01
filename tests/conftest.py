@@ -1,6 +1,8 @@
 import sys
 import os
+import warnings
 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 # Add the parent directory to sys.path so that SAJAPI can be found
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from fastapi.testclient import TestClient

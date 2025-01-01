@@ -3,7 +3,9 @@ import pytest
 from jose import jwt
 # from .database import client, session
 from app.config import settings
+import warnings
 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # @pytest.fixture
 # def test_user(client):

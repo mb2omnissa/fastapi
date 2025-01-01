@@ -1,6 +1,8 @@
 import pytest
 from app import models
+import warnings
 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 @pytest.fixture()
 def test_vote(test_posts, session, test_user):
